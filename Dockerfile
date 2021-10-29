@@ -62,3 +62,4 @@ RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 RUN source ~/.bashrc
 RUN /bin/bash -c 'source /opt/ros/melodic/setup.bash; catkin_make'
 WORKDIR /home/interfaz_folder/catkin_ws/src
+#
