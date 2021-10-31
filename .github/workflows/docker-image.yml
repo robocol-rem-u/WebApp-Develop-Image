@@ -39,5 +39,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: robocol/interfaz:latest
+          tags: robocol/interfaz_develop:latest
           platforms: linux/amd64,linux/arm64
