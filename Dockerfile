@@ -45,6 +45,7 @@ RUN sudo apt-get install -y libffi-dev
 RUN sudo apt-get install -y python3-dev
 RUN sudo apt-get install -y cargo
 RUN pip3 install cryptography --no-binary cryptography
+RUN pip3 install channels-redis
 RUN python3 -m pip install -U channels
 
 #PYTHON PACKAGES
@@ -61,5 +62,8 @@ WORKDIR /home/interfaz_folder/catkin_ws
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 RUN source ~/.bashrc
 RUN /bin/bash -c 'source /opt/ros/melodic/setup.bash; catkin_make'
+ENV ip_address = 192.168.1.106
+RUN export ROS_HOSTNAME=${ip_address}
+RUN export ROS_IP=${ip_address}
 WORKDIR /home/interfaz_folder/catkin_ws/src
 #
